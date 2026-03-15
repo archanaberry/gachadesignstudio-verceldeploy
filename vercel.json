@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "public/index.html",
+      "src": "public/**/*",
       "use": "@vercel/static"
     },
     {
@@ -14,10 +14,6 @@
     {
       "src": "/api/(.*)",
       "dest": "/serverdeploy/api/$1.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/public/$1"
     },
     {
       "handle": "filesystem"
