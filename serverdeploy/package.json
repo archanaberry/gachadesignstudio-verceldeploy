@@ -1,0 +1,5 @@
+{
+  "name": "serverdeploy",
+  "private": true,
+  "type": "module"
+}
