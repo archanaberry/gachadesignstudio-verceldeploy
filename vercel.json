@@ -1,9 +1,30 @@
 {
   "version": 2,
   "builds": [
-    { "src": "serverdeploy/api/*.js", "use": "@vercel/node" }
+    {
+      "src": "public/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "serverdeploy/api/*.js",
+      "use": "@vercel/node"
+    }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "/serverdeploy/api/$1.js" }
+    {
+      "src": "/api/(.*)",
+      "dest": "/serverdeploy/api/$1.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/public/index.html"
+    }
   ]
 }
