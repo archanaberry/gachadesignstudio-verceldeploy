@@ -5,7 +5,8 @@
     { "src": "api/download.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/manifest.json", "dest": "api/manifest.js" },
-    { "src": "/download/(.*)", "dest": "api/download.js" }
+    { "src": "/manifest.json", "dest": "/api/manifest.js" },
+    { "src": "/download/(.*)", "dest": "/api/download.js" },
+    { "src": "/test", "dest": "/api/test.js" }
   ]
 }
