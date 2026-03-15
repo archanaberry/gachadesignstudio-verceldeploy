@@ -66,13 +66,15 @@
     }
 
     .gds-logo {
-  width: 100%;
-  max-width: 600px;
-  display: block;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1; /* pastikan logo di atas pita */
-  }
+      width: 100%;
+      max-width: 600px;
+      display: block;
+      margin: 25px auto 20px;
+      position: relative;
+      z-index: 1;
+      height: auto;
+      object-fit: contain;
+    }
     
     /* Floating stationery decorations */
     /* Floating stationery and fruit decorations */
@@ -110,18 +112,18 @@
     
     /* Main container - Paper sheet effect */
     .container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 60px 40px 40px; /* padding-top: 60px supaya logo tidak kena pita */
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  box-shadow: 
-    0 10px 40px var(--shadow-soft),
-    0 0 0 1px rgba(255, 255, 255, 0.5) inset,
-    0 0 100px rgba(255, 209, 220, 0.2) inset;
-  position: relative;
-  }
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 40px 40px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 
+        0 10px 40px var(--shadow-soft),
+        0 0 0 1px rgba(255, 255, 255, 0.5) inset,
+        0 0 100px rgba(255, 209, 220, 0.2) inset;
+      position: relative;
+    }
     
     /* Washi tape decoration */
     .container::before {
@@ -336,11 +338,26 @@
     }
     
     /* Responsive */
+    @media (max-width: 768px) {
+      .gds-logo { 
+        max-width: 320px;
+        width: 85%;
+      }
+    }
+    
     @media (max-width: 600px) {
       .container { padding: 20px; }
       h1 { font-size: 1.4rem; }
       .input-group { flex-direction: column; }
       input, button { width: 100%; }
+      .gds-logo { 
+        max-width: 280px;
+        width: 80%;
+        margin: 20px auto 15px;
+      }
+      .subtitle {
+        font-size: 0.8rem;
+      }
     }
   </style>
 </head>
@@ -355,7 +372,8 @@
   <div class="deco deco-strawberry">🍓</div>
   
   <div class="container">
-   <img src="/public/gachadesignstudio.png" class="gds-logo">
+   <!-- <img src="./public/gachadesignstudio.png" class="gds-logo"> --> 
+   <img src="./public/gachadesignstudio.png" class="gds-logo">
     <p class="subtitle">Internal API Console — Chibi Paper Aesthetic v1.0</p>
     
     <div class="status-bar">
