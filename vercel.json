@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "serverdeploy/api/manifest.js", "use": "@vercel/node" },
+    { "src": "serverdeploy/api/download.js",   "use": "@vercel/node" },
+    { "src": "serverdeploy/api/test.js",       "use": "@vercel/node" }
+  ],
+  "routes": [
+    // API routes (no .js in public URL)
+    { "src": "/serverdeploy/api/manifest", "dest": "/serverdeploy/api/manifest.js" },
+    { "src": "/serverdeploy/api/download/(.*)", "dest": "/serverdeploy/api/download.js" },
+    { "src": "/serverdeploy/api/test", "dest": "/serverdeploy/api/test.js" },
+
+    // Static preview folder (serve files in /static_preview)
+    { "src": "/static_preview/(.*)", "dest": "/static_preview/$1" },
+
+    // Serve index.html for root and any other path (single-page preview)
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}
