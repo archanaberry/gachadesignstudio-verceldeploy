@@ -3,7 +3,7 @@
   "builds": [
     { "src": "serverdeploy/api/manifest.js", "use": "@vercel/node" },
     { "src": "serverdeploy/api/download.js", "use": "@vercel/node" },
-    { "src": "serverdeploy/api/test.js", "use": "@vercel/node" }
+    { "src": "serverdeploy/api/test.js", "use": "@vercel/node" },
     { "src": "/index.html", "use": "@vercel/node" }
   ],
   "routes": [
