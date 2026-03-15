@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>GachaDesignStudio Preview</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; padding: 20px; }
+    .row { display:flex; gap:12px; margin-bottom:12px; }
+    button { padding:8px 12px; }
+    pre { background:#111; color:#e6e6e6; padding:12px; border-radius:6px; overflow:auto; max-height:40vh; }
+    .small { font-size:0.9rem; color:#666; }
+    input { padding:6px; }
+  </style>
+</head>
+<body>
+  <h1>Gacha Design Studio — API Preview</h1>
+
+  <p class="small">Static preview files are local copies from <code>serverdeploy/api/</code>.  
+  Use the buttons to <strong>call live API</strong> (if serverless is deployed) or view offline copy.</p>
+
+  <div class="row">
+    <button id="btn-test-api">Call /serverdeploy/api/test</button>
+    <button id="btn-manifest-api">Call /serverdeploy/api/manifest</button>
+    <button id="btn-download-api">Download sample.gds</button>
+  </div>
+
+  <div class="row">
+    <input id="apiKey" placeholder="API key (x-api-key or ?api_key=...)" />
+    <button id="btn-view-static">View static preview files</button>
+  </div>
+
+  <h3>Result</h3>
+  <pre id="result">No request yet</pre>
+
+  <h3>Static file preview</h3>
+  <select id="staticList"></select>
+  <button id="btnLoadStatic">Load</button>
+  <pre id="staticPreview"></pre>
+
+  <script src="/index.js"></script>
+</body>
+</html>
