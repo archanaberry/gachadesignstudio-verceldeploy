@@ -7,7 +7,6 @@
     { "src": "/api/(.*)", "dest": "/serverdeploy/api/$1.js" },
     { "src": "/static_preview/(.*)", "dest": "/static_preview/$1" },
     { "src": "/(.*\\.(?:js|css|map|png|jpg|jpeg|gif|svg|webp|ico|json))", "dest": "/$1" },
-    { "src": "/", "dest": "/index.html" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
