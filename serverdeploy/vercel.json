@@ -1,13 +1,17 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/manifest.js", "use": "@vercel/node" },
-    { "src": "api/download.js", "use": "@vercel/node" },
-    { "src": "api/test.js", "use": "@vercel/node" }
+    { "src": "serverdeploy/api/manifest.js", "use": "@vercel/node" },
+    { "src": "serverdeploy/api/download.js", "use": "@vercel/node" },
+    { "src": "serverdeploy/api/test.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/manifest.json", "dest": "/api/manifest.js" },
-    { "src": "/download/(.*)", "dest": "/api/download.js" },
-    { "src": "/test", "dest": "/api/test.js" }
+    { "src": "/serverdeploy/api/manifest", "dest": "/serverdeploy/api/manifest.js" },
+    { "src": "/serverdeploy/api/download/(.*)", "dest": "/serverdeploy/api/download.js" },
+    { "src": "/serverdeploy/api/test", "dest": "/serverdeploy/api/test.js" },
+
+    // serve index.html for root
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
