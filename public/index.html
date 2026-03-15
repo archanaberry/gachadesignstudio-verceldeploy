@@ -66,13 +66,13 @@
     }
 
     .gds-logo {
-      margin-top: 10%; /* beri sedikit jarak tambahan */;
-      max-width: 100%;
-      width: 600px;
-      height: auto;
-      display: block;
-      margin: 0 auto 20px auto;
-    }
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1; /* pastikan logo di atas pita */
+  }
     
     /* Floating stationery decorations */
     /* Floating stationery and fruit decorations */
@@ -110,32 +110,33 @@
     
     /* Main container - Paper sheet effect */
     .container {
-      max-width: 900px;
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: 
-        0 10px 40px var(--shadow-soft),
-        0 0 0 1px rgba(255, 255, 255, 0.5) inset,
-        0 0 100px rgba(255, 209, 220, 0.2) inset;
-      position: relative;
-    }
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 40px 40px; /* padding-top: 60px supaya logo tidak kena pita */
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 
+    0 10px 40px var(--shadow-soft),
+    0 0 0 1px rgba(255, 255, 255, 0.5) inset,
+    0 0 100px rgba(255, 209, 220, 0.2) inset;
+  position: relative;
+  }
     
     /* Washi tape decoration */
     .container::before {
-      content: '🎀';
-      position: absolute;
-      top: -15px;
-      left: 50%;
-      transform: translateX(-50%) rotate(-5deg);
-      font-size: 2rem;
-      background: var(--soft-pink);
-      padding: 5px 20px;
-      border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
+  content: '🎀';
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-5deg);
+  font-size: 2rem;
+  background: var(--soft-pink);
+  padding: 5px 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  z-index: 0; /* pita tetap di bawah konten */
+}
     
     h1 {
       text-align: center;
