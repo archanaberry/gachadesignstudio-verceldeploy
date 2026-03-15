@@ -66,9 +66,11 @@
     }
 
     .gds-logo {
-    width: 60px;       /* lebar gambar */
-    height: 60px;      /* tinggi gambar */
-    object-fit: contain; /* agar proporsional jika gambar tidak persegi */
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    display: block;       /* agar margin auto berlaku */
+    margin: 0 auto;       /* center horizontal */
     }
     
     /* Floating stationery decorations */
@@ -331,7 +333,7 @@
   <div class="deco deco-heart">💕</div>
   
   <div class="container">
-   <img src="gachadesignstudio.png" class="gds-logo">
+   <img src="/gachadesignstudio.png" class="gds-logo">
     <p class="subtitle">Internal API Console — Chibi Paper Aesthetic v1.0</p>
     
     <div class="status-bar">
