@@ -4,23 +4,19 @@
     { "src": "serverdeploy/api/*.js", "use": "@vercel/node" }
   ],
   "routes": [
-    // rewrite lama /serverdeploy/api/* → /api/* agar compatible
+
     { "src": "/serverdeploy/api/(.*)", "dest": "/api/$1" },
 
-    // route API baru
     { "src": "/api/(.*)", "dest": "/serverdeploy/api/$1.js" },
 
-    // static preview
     { "src": "/static_preview/(.*)", "dest": "/static_preview/$1" },
 
-    // cache semua file statis (js/css/images/json dll)
     {
       "src": "/(.*\\.(?:js|css|map|png|jpg|jpeg|gif|svg|webp|ico|json))",
       "headers": { "cache-control": "public, max-age=31536000, immutable" },
       "dest": "/$1"
     },
 
-    // default index.html untuk SPA
     { "src": "/", "dest": "/index.html" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
